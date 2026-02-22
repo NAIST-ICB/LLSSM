@@ -631,9 +631,15 @@ class SSM():
         return deformed_verts_flatten.reshape(self._number_of_batch, -1, self.mean_points.shape[1])
 
     def calculate_shape_parameter(self, points):
-        points_flatten = points.ravel()
+        if isinstance(points, np.ndarray):
+            points_flatten = points.ravel()
+        else:
+            points_flatten = torch.flatten(points)
         diff = points_flatten - self.mean_points_flatten
-        score = np.matmul(self.components, diff)
+        if isinstance(self.components, np.ndarray):
+            score = np.matmul(self.components, diff)
+        else:
+            score = torch.matmul(self.components, diff)
         return score / self.standard_deviations
 
 
