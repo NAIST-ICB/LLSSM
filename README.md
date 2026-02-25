@@ -59,6 +59,24 @@ python multi_structure_mesh_reader.py <input.vtk> <output.vtk> <point_data_name>
 ```
 
 
+## Simple Visualization
+
+The mean shape of the Auto-FWLL-SSM, visualized in 3D Slicer with per-structure color labels:
+
+<!-- 
+![Mean shape visualized in 3D Slicer](fig/mean_shape_3dslicer.png) 
+-->
+
+`visualize_3dslicer.py` is a 3D Slicer Python script for automated mesh visualization and screen capture.
+
+```bash
+# Usage (run via 3D Slicer's built-in Python)
+"<path/to/Slicer>" --python-script visualize_3dslicer.py <input.vtk> \
+    --capture <output.png> --auto-crop
+```
+
+Options: `--array`, `--colormap`, `--opacity`, `--range-min`, `--range-max`, `--rotx/y/z`, `--zoom`, `--pan-x/y`, `--parallel`, `--fov`, `--capture`.
+
 ## Data Availability
 
 > Under construction
