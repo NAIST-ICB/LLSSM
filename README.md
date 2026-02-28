@@ -77,6 +77,25 @@ The mean shape of the Auto-FWLL-SSM, visualized in 3D Slicer with per-structure 
 
 Options: `--array`, `--colormap`, `--opacity`, `--range-min`, `--range-max`, `--rotx/y/z`, `--zoom`, `--pan-x/y`, `--parallel`, `--fov`, `--capture`.
 
+## LLSSM Explorer — 3D Slicer Plugin
+
+A 3D Slicer plugin (`LLSSMExplorer/`) for real-time interactive exploration of PCA shape modes in the LLSSM. Load an `.npz` model file and interactively deform the mean shape along each principal component using a slider (-3σ to +3σ).
+
+Features:
+- Real-time PCA shape deformation with cumulative multi-component support
+- Anatomical structure filtering by side (Left/Right/Center), region (Hip-Thigh/Lower Leg), and type (Bones/Muscles/Skin/Landmarks)
+- Animation playback for automatic mode oscillation
+- Configurable color tables and structure highlighting
+
+```bat
+"<path/to/Slicer>" ^
+    --additional-module-paths "path\to\LLSSMExplorer" ^
+    --LLSSMExplorer-npz "path\to\model.npz" ^
+    --LLSSMExplorer-view "Posterior"
+```
+
+<!-- See [`LLSSMExplorer/README.md`](LLSSMExplorer/README.md) for full documentation. -->
+
 ## Data Availability
 
 > Under construction
